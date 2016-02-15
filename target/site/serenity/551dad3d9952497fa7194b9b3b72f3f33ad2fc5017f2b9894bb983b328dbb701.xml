@@ -1,0 +1,66 @@
+<acceptance-test-run title="User creates a new list" name="User creates a new list" description="" steps="5" successful="5" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="11926" timestamp="2016-02-15T10:42:12.851+01:00">
+  <user-story id="creating-new-list" name="Creating new list" path="List/create_new_list.feature"/>
+  <issues>
+    <issue>ETSY-101</issue>
+  </issues>
+  <versions>
+    <version>Release-1</version>
+    <version>Sprint-1.2</version>
+  </versions>
+  <tags>
+    <tag name="Creating new list" type="feature"/>
+    <tag name="ETSY-101" type="issue"/>
+    <tag name="Release-1" type="version"/>
+    <tag name="Sprint-1.2" type="version"/>
+  </tags>
+  <test-group name="Given User log-in to WL" result="SUCCESS">
+    <screenshots>
+      <screenshot image="8307005d57e22857f3c169a4032f5c75.png"/>
+    </screenshots>
+    <test-step result="SUCCESS" duration="3338">
+      <screenshots>
+        <screenshot image="9a830a0abffb4989d15b01b32c2cc784.png"/>
+      </screenshots>
+      <description>Open wl3 home page</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="3196">
+      <screenshots>
+        <screenshot image="8307005d57e22857f3c169a4032f5c75.png"/>
+      </screenshots>
+      <description>Login to wl3</description>
+    </test-step>
+  </test-group>
+  <test-group name="And User is in List View" result="SUCCESS">
+    <screenshots>
+      <screenshot image="8307005d57e22857f3c169a4032f5c75.png"/>
+    </screenshots>
+    <test-step result="SUCCESS" duration="126">
+      <screenshots>
+        <screenshot image="8307005d57e22857f3c169a4032f5c75.png"/>
+      </screenshots>
+      <description>Is list view</description>
+    </test-step>
+  </test-group>
+  <test-group name="When User Creates New List" result="SUCCESS">
+    <screenshots>
+      <screenshot image="4cb0f4026247a7bf7d6f05630c5015b0.png"/>
+    </screenshots>
+    <test-step result="SUCCESS" duration="2583">
+      <screenshots>
+        <screenshot image="b402eaac92239558ed101571107cd7f2.png"/>
+      </screenshots>
+      <description>Create new list wl3</description>
+    </test-step>
+  </test-group>
+  <test-group name="Then New List Gets Created At Bottom of List View" result="SUCCESS">
+    <screenshots>
+      <screenshot image="2a75377df7731004efc4556a07d47f73.png"/>
+    </screenshots>
+    <test-step result="SUCCESS" duration="513">
+      <screenshots>
+        <screenshot image="60d72764cf15111ec81fd3a5b7e1461b.png"/>
+      </screenshots>
+      <description>Is list present</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>
