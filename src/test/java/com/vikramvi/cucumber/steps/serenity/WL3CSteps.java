@@ -1,5 +1,6 @@
 package com.vikramvi.cucumber.steps.serenity;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -12,6 +13,12 @@ public class WL3CSteps extends ScenarioSteps{
     @Step
     public void open_WL3_home_page(){
     	loginPage.open();
+    }
+    
+    @Step
+    public void open_WL3_LoginPage(){
+    	loginPage.open();
+    	loginPage.bringUpLoginDialog();
     }
     
     @Step
@@ -37,5 +44,33 @@ public class WL3CSteps extends ScenarioSteps{
     @Step
     public int isListPresent(){
     	return listPage.searchList("Cucumber-list");
+    }
+    
+    @Step
+    public void enterEmailID(Boolean flag){
+    	if(flag){
+    		loginPage.enterLoginField("vikram.6w1@outlook.com");
+    	}else{
+    		loginPage.enterLoginField("vikram.WRONG@rocketmail.com");
+    	}
+    }
+    
+    @Step
+    public void enterPassword(Boolean flag){
+    	if(flag){
+    		loginPage.enterPasswordField("654321");
+    	}else{
+    		loginPage.enterPasswordField("WRONG");
+    	}
+    }
+    
+    @Step
+    public void clickSignInButton(){
+    	loginPage.clickLogInButton();
+    }
+    
+    @Step
+    public void verifyErrorMessageForInvalidLoginInfo(){
+        assertThat( loginPage.getDriver().getPageSource().contains("The email or password you entered was incorrect. Please try again.") ).isTrue();
     }
 }
