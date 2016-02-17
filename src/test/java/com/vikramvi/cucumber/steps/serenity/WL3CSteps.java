@@ -25,7 +25,7 @@ public class WL3CSteps extends ScenarioSteps{
     public void login_to_WL3(){
     	loginPage.bringUpLoginDialog();
     	loginPage.enterLoginField("vikram.playdom11@rocketmail.com");
-    	loginPage.enterPasswordField("654321");
+    	loginPage.enterPasswordField("6W654321");
     	loginPage.clickLogInButton();
     }
     
