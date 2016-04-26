@@ -1,6 +1,9 @@
 package com.vikramvi.cucumber.steps.serenity;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.io.IOException;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -73,4 +76,19 @@ public class WL3CSteps extends ScenarioSteps{
     public void verifyErrorMessageForInvalidLoginInfo(){
         assertThat( loginPage.getDriver().getPageSource().contains("The email or password you entered was incorrect. Please try again.") ).isTrue();
     }
+    
+    @Step
+    public void selectListAndDoTaskDragAndDrop(){
+    	listPage.selectSpecifiedList("Cucumber-list");
+    	try {
+			listPage.DragAndDrop();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
 }
