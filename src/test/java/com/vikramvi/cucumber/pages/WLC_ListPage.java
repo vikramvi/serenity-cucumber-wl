@@ -175,7 +175,7 @@ public class WLC_ListPage extends PageObject {
 				      //JQuery can ONLY work with id and css , xpath does NOT work with it.
 				      //String source =  "//section[@id='wrapper']/article/ul/li[4]/a"; 
 				      String source = "div.tasks-scroll ol.tasks li:nth-child(4)";
-				      String target = "div.tasks-scroll ol.tasks li:nth-child(1)"; //#bin";
+				      String target = "div.lists-scroll ul.new-list-dropzone"; //"ul.filters-collection li a" ; //"div.tasks-scroll ol.tasks li:nth-child(1)"; //#bin";
 				      
 				      StringBuffer buffer = new StringBuffer();
 				      String line;
@@ -185,7 +185,7 @@ public class WLC_ListPage extends PageObject {
 				
 				      String javaScript = buffer.toString();
 				
-				      javaScript = javaScript + "$('" + source + "').simulateDragDrop({ dropTarget: '" + target + "'});";
+				      javaScript = javaScript + "window.jQuery('" + source + "').simulateDragDrop({ dropTarget: '" + target + "'});";
 				      ((JavascriptExecutor)getDriver()).executeScript(javaScript);
 				      
 				      Thread.sleep(1000);
