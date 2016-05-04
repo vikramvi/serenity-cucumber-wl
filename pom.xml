@@ -113,7 +113,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18</version>
                 <configuration>
-                    <skip>true</skip>
+                     <parallel>classes</parallel>
+	                 <threadCount>1</threadCount>
+	                 <skip>${skip.parallel}</skip>
                 </configuration>
             </plugin>
             <plugin>
