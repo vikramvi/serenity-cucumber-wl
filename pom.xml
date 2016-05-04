@@ -108,7 +108,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
@@ -127,7 +127,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                         <include>**/cucumber/*.java</include>
                     </includes>
                     <reuseForks>true</reuseForks>
-                    <!--<forkCount>2</forkCount>-->
+                    <forkCount>2</forkCount>
                     <argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>
 	                     <webdriver.driver>${webdriver.driver}</webdriver.driver>
@@ -141,7 +141,34 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
+            
+            
+	            <plugin>
+			    <artifactId>maven-failsafe-plugin</artifactId>
+			    <version>2.18.1</version>
+			    <configuration>
+			        <includes>
+			            <include>**/cucumber/*.java</include>
+			        </includes>
+			        <excludes>
+			            <exclude>**/*WithFailures.java</exclude>
+			        </excludes>
+			        <argLine>-Xmx512m</argLine>
+			        <parallel>classes</parallel>
+			        <threadCount>4</threadCount>
+			        <forkCount>4</forkCount>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <goals>
+			                <goal>integration-test</goal>
+			                <goal>verify</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+	        </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
