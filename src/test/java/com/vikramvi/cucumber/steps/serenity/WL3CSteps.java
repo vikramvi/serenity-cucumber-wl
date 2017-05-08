@@ -12,7 +12,8 @@ import com.vikramvi.cucumber.pages.*;
 public class WL3CSteps extends ScenarioSteps{
     WLC_LoginPage loginPage;
     WLC_ListPage  listPage;
-	
+    String validEmail = "vikram.playdom11@rocketmail.com" , validPassword = "6W654321" ;	
+    
     @Step
     public void open_WL3_home_page(){
     	loginPage.open();
@@ -27,8 +28,8 @@ public class WL3CSteps extends ScenarioSteps{
     @Step
     public void login_to_WL3(){
     	loginPage.bringUpLoginDialog();
-    	loginPage.enterLoginField("vikram.playdom11@rocketmail.com");
-    	loginPage.enterPasswordField("6W654321");
+    	loginPage.enterLoginField(validEmail);
+    	loginPage.enterPasswordField(validPassword);
     	loginPage.clickLogInButton();
     }
     
@@ -80,15 +81,12 @@ public class WL3CSteps extends ScenarioSteps{
     @Step
     public void selectListAndDoTaskDragAndDrop(){
     	listPage.selectSpecifiedList("Cucumber-list");
-    	try {
+    	try{
 			listPage.DragAndDrop();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+	}catch(Exception e){
+			
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	}
     }
     
 }

@@ -29,13 +29,12 @@ public class ListScenarioSteps {
 	
 	@When("User Creates New List")
 	public void createNewList(){
-		////wlCucumberSteps.create_new_list_WL3(); TEMP
+		wlCucumberSteps.create_new_list_WL3();
 	}
 	  
 	@Then("New List Gets Created At Bottom of List View")
 	public void checkListPosition(){
-		////assertThat(wlCucumberSteps.isListPresent()).isNotEqualTo(0);
-		wlCucumberSteps.selectListAndDoTaskDragAndDrop();
+		assertThat(wlCucumberSteps.isListPresent()).isNotEqualTo(0);		
 	}
 		
 }
