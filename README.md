@@ -4,7 +4,7 @@ http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumb
 
 To run test cases , from command line execute below command
 
-mvn clean verify
+mvn clean verify -Drun.parallel=false
 
 docker debug mode VNC
 
