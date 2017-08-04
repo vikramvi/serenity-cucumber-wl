@@ -30,6 +30,8 @@ public class WLC_ListPage extends PageObject {
 	@FindBy(xpath="//div[@class='content']//button[@class='submit full blue']")
 	private WebElement EditListDialog_Done;
 	
+	@FindBy(xpath="//button[@class='cancel full close']")
+	private WebElement EditListDialog_Cancel;
 	
 	public void clickOnAdd_a_list(){
 		element(AddNewList).click();
@@ -57,6 +59,10 @@ public class WLC_ListPage extends PageObject {
 	
 	public void clickDoneButton(){
 		element(EditListDialog_Done).click();
+	}
+	
+	public void clickCancelButton() {
+	    element(EditListDialog_Cancel).click();
 	}
 	
 	public boolean isListView(){

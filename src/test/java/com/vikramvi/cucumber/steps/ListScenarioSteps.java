@@ -32,6 +32,16 @@ public class ListScenarioSteps {
 		wlCucumberSteps.create_new_list_WL3();
 	}
 	  
+	@When("User tries to create new list")
+	public void createNewListFirstStep() {
+	    wlCucumberSteps.create_new_list_first_step();
+	}
+	
+	@Then("User should be able to cancel the list creation action")
+	public void userCancelsListCreationAction() {
+	    wlCucumberSteps.create_new_list_cancel_step();
+	}
+	
 	@Then("New List Gets Created At Bottom of List View")
 	public void checkListPosition(){
 		assertThat(wlCucumberSteps.isListPresent()).isNotEqualTo(0);		

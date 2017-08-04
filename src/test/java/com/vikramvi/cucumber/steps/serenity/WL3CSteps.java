@@ -41,6 +41,16 @@ public class WL3CSteps extends ScenarioSteps{
     }
     
     @Step
+    public void create_new_list_first_step() {
+	listPage.clickOnAdd_a_list();
+    }
+    
+    @Step
+    public void create_new_list_cancel_step() {
+	listPage.clickCancelButton();
+    }
+    
+    @Step
     public void isListView(){
     	listPage.isListView();
     }
